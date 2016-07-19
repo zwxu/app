@@ -104,8 +104,20 @@
     <plugin>
            <groupId>org.mortbay.jetty</groupId>
            <artifactId>jetty-maven-plugin</artifactId>
-         </plugin>	
-         <plugin>
+           <version>8.1.3.v20120416</version>
+				<configuration>
+					<reload>manual</reload>
+					<connectors>
+						<connector implementation="org.eclipse.jetty.server.nio.SelectChannelConnector">
+							<port>8080</port>
+						</connector>
+					</connectors>
+					<webAppConfig>
+						<contextPath>/${project.artifactId}</contextPath>
+					</webAppConfig>
+				</configuration>
+    </plugin>	
+    <plugin>
                 <groupId>org.mybatis.generator</groupId>
                 <artifactId>mybatis-generator-maven-plugin</artifactId>
                 <version>1.3.2</version>

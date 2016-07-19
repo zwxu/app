@@ -16,8 +16,12 @@
  
 <servlet-mapping>
     <servlet-name>springmvc</servlet-name>
-    <url-pattern>/</url-pattern>
+    <url-pattern>/fcoupon/say</url-pattern>
 </servlet-mapping>
+<servlet-mapping>
+        <servlet-name>springmvc</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
 	<welcome-file-list>
 		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>

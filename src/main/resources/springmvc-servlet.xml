@@ -11,8 +11,8 @@
     <context:component-scan base-package="test.SpringMVC"/>
  
     
-    <!-- if you use annotation you must configure following setting -->
-    <mvc:annotation-driven />
+    <!-- 不启用，则必须在web.xml中配置-->
+    <!-- <mvc:annotation-driven /> -->
      
     <!-- configure the InternalResourceViewResolver -->
    
