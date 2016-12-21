@@ -9,14 +9,12 @@ public class Main {
 		// TODO Auto-generated method stub
 		
            ApplicationContext app =new ClassPathXmlApplicationContext("classpath:dispatcher-servlet.xml" ); 
-         /* SubjectFactory factory = (SubjectFactory) app.getBean("factory" );
-            Subject s1 = (Subject) factory.getObject2();
-            s1.say();
-           SubjectFactory factory2 = (SubjectFactory) app.getBean("factory2" );
-            Subject2 s2 = (Subject2) factory2.getObject2();
-            s2.say();*/
-           Subject s1 = new RealSubject();
-           s1.say();
+           	//此时bean的创建有factory-bean接管，而不再是Spring
+            Subject2 s2 = (Subject2) app.getBean("subject2" );
+            s2.say();
+            Subject s = (Subject) app.getBean("subject" );
+            s.say();
+        
             
    
        
