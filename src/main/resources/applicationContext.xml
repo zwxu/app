@@ -25,25 +25,10 @@
     <bean id="subject" class="com.ustc.zwxu.app.Subject" factory-bean="factory" factory-method="getObject2" />
     <bean id="factory" class="com.ustc.zwxu.app.SubjectFactory" p:target="com.ustc.zwxu.app.Subject"/>
     
-    <bean id="psInsurancePushGenerator"
-		class="com.ustc.zwxu.app.CommonPushValueGeneratorV2">
+    <bean id="pushGenerator"
+		class="com.ustc.zwxu.app.Velocity.CommonPushValueGenerator">
 		<property name="title">
 			<value><![CDATA[${productName}购买成功]]></value>
-		</property>
-		<property name="titleDesc">
-			<value><![CDATA[您所购买的${productName}已扣款成功！]]></value>
-		</property>
-		<property name="descTemplate">
-			<value><![CDATA[您于${date}购买的${productName}已扣款成功。]]></value>
-		</property>
-		<property name="valueTemplate">
-			<value><![CDATA[您于${date}购买的${productName}已扣款成功，购买金额为${orderAmount}元,起息日：${startDate}]]></value>
-		</property>
-		<property name="messageType">
-			<value><![CDATA[15]]></value>
-		</property>
-		<property name="webViewUrl">
-			<value>${webViewUrl}</value>
 		</property>
 		<property name="htmlTemplate">
 			<value>
@@ -58,17 +43,11 @@
 		              <p>支付方式：${bankName} 尾号${cardNo}</p>
 		              <p>购买金额：${orderAmount} 元</p>
 		            </dd>
-		            <dd class="weburl">
-		              <p>首次将于${startDate}计算收益，${incomeRecvDate}可查看收益。</p>
-		              <a href="${htmlDetailUrl}">历史记录</a>
-		            </dd>
+		           
 		        </dl>
 		    </div>
 			]]>
 			</value>
-		</property>
-		<property name="mainUrl">
-			<value>${mainUrl}</value>
 		</property>
 	</bean>
    
