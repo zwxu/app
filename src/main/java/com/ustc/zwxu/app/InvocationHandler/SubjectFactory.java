@@ -1,4 +1,4 @@
-package com.ustc.zwxu.app;
+package com.ustc.zwxu.app.InvocationHandler;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;

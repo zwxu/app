@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.Velocity;
 import org.apache.velocity.app.VelocityEngine;
 
 
@@ -35,6 +36,7 @@ public class VelocityUtil {
             // 初始化
             VelocityEngine tempVe = new VelocityEngine();
             try {
+            	//这种初始化方法非单例
                 tempVe.init();
             } catch (Exception e) {
                 e.printStackTrace();
@@ -66,8 +68,9 @@ public class VelocityUtil {
         }
 
         StringWriter writer = new StringWriter();
+        //Velocity v =new Velocity();
         try {
-            loadEngine().evaluate(context, writer, "velocity", templateContent);
+            loadEngine().evaluate(context, writer, "velocity", templateContent);//常用turbine来实例化velocity引擎
 
             return writer.toString();
         } catch (Exception e) {

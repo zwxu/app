@@ -1,4 +1,4 @@
-package com.ustc.zwxu.app;
+package com.ustc.zwxu.app.InvocationHandler;
 
 
 class Professor implements Cloneable 

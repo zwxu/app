@@ -16,7 +16,7 @@ public class Test {
 		// TODO Auto-generated method stub
 		ApplicationContext app =new ClassPathXmlApplicationContext("classpath:spring/applicationContext.xml");  
 		CommonPushValueGenerator generator = (CommonPushValueGenerator) app.getBean("pushGenerator");
-		String value = generator.genValue(generator.getTitle(), generator.generateMap());
+		String value = generator.genValue(generator.getHtmlTemplate(), generator.generateMap());
 		System.out.println(value);
 		
 	

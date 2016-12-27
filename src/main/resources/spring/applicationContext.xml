@@ -19,11 +19,11 @@
     <bean id="factory2" class="com.ustc.zwxu.app.SubjectFactory" p:serviceInterface-ref="realSubject2"/>
     <bean id="realSubject2" class="com.ustc.zwxu.app.RealSubject2"/> -->
     
-    <bean id="subject2" class="com.ustc.zwxu.app.Subject2" factory-bean="factory2" factory-method="getObject2" />
-    <bean id="factory2" class="com.ustc.zwxu.app.SubjectFactory" p:target="com.ustc.zwxu.app.Subject2"/> 
+    <bean id="subject2" class="com.ustc.zwxu.app.InvocationHandler.Subject2" factory-bean="factory2" factory-method="getObject2" />
+    <bean id="factory2" class="com.ustc.zwxu.app.InvocationHandler.SubjectFactory" p:target="com.ustc.zwxu.app.InvocationHandler.Subject2"/> 
 
-    <bean id="subject" class="com.ustc.zwxu.app.Subject" factory-bean="factory" factory-method="getObject2" />
-    <bean id="factory" class="com.ustc.zwxu.app.SubjectFactory" p:target="com.ustc.zwxu.app.Subject"/>
+    <bean id="subject" class="com.ustc.zwxu.app.InvocationHandler.Subject" factory-bean="factory" factory-method="getObject2" />
+    <bean id="factory" class="com.ustc.zwxu.app.InvocationHandler.SubjectFactory" p:target="com.ustc.zwxu.app.InvocationHandler.Subject"/>
     
     <bean id="pushGenerator"
 		class="com.ustc.zwxu.app.Velocity.CommonPushValueGenerator">
