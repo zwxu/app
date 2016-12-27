@@ -51,5 +51,26 @@
 		</property>
 	</bean>
    
+   <bean id="hqAsset" class="com.ustc.zwxu.app.Thread.HQAsset"></bean>
+   <bean id="dqAsset" class="com.ustc.zwxu.app.Thread.DQAsset"></bean>
+   	<bean id="demo" class="com.ustc.zwxu.app.Thread.FutureDemo">
+		<property name="assetMap">
+			<map>
+				<entry key="HQ" value-ref="hqAsset" />
+				<entry key="DQ" value-ref="dqAsset" />
+			</map>
+		</property>
+		<property name="threadPoolTaskExecutor">
+			<bean class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+				<property name="corePoolSize" value="20" />
+				<property name="maxPoolSize" value="40" />
+				<property name="queueCapacity" value="200" />
+				<property name="keepAliveSeconds" value="300" />
+				<property name="rejectedExecutionHandler">
+			<bean class="java.util.concurrent.ThreadPoolExecutor$CallerRunsPolicy" />
+				</property>
+			</bean>
+		</property>
+	</bean>
    
 </beans>
