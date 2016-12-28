@@ -4,7 +4,7 @@ import java.util.Map;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-
+import org.springframework.util.Assert;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
@@ -83,6 +83,18 @@ public class FutureDemo {
 		return total;
 	}
 
+	public void query(String memberId)
+	{
+		//Assert.notNull(memberId, "memberId is null");
+		try
+		{
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 
 
 	public static void main(String[] args) {
@@ -92,7 +104,7 @@ public class FutureDemo {
 		
 	
 		
-		System.out.println(processor.queryAll());
+		processor.query(null);
 	}
 
 }
