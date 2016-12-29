@@ -70,7 +70,7 @@ class DealFile implements Runnable{
  * 测试类
  */
  
-public class Main {
+public class MultiThreadWriteFileDemo {
 	 public static void main(String[] args) throws IOException{
 		 BufferedWriter out = new BufferedWriter(new FileWriter("data.txt",true));
 		 ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue<String>();

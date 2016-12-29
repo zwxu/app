@@ -1,4 +1,4 @@
-package com.ustc.zwxu.app.Thread;
+/*package com.ustc.zwxu.app.Thread;
 
 public class Demo {
 
@@ -71,3 +71,4 @@ class MinusThread implements Runnable
 	}
 	
 }
+*/
