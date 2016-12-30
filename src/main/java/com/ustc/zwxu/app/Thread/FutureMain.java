@@ -11,7 +11,7 @@ public class FutureMain {
 	public static void main(String args[]) {
         long start = System.currentTimeMillis();
 
-        Content content1 = Retriever.retrieve("http://www.baidu.com/");
+        Content content1 = Retriever.retrieve("http://www.baidu.com/");//主线程正常往下走，其他线程起步操作
         Content content2 = Retriever.retrieve("http://www.sohu.com/");
         Content content3 = Retriever.retrieve("http://www.163.com/");
 
@@ -69,7 +69,7 @@ class AsyncContentImpl implements Content {
         this.ready = true;
         notifyAll();
     }
-    public synchronized byte[] getBytes() {
+    public synchronized byte[] getBytes() {//用于保证synccontent正常生成
         while (!ready) {
             try {
                 wait();
